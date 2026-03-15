@@ -1,0 +1,19 @@
+# Web upload configuration - no hardcoding
+version: "1.0"
+
+# Extensions allowed for upload (must match pipeline supported_extensions)
+allowed_extensions:
+  - ".pdf"
+  - ".docx"
+  - ".doc"
+  - ".txt"
+  - ".md"
+  - ".html"
+
+# Max file size in bytes (default 50MB)
+max_content_length: 52428800
+
+# Export formats for download
+default_export_formats:
+  - json
+  - pdf

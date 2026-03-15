@@ -1,0 +1,136 @@
+{
+  "case_id": "AAB-CASE-2025-LL-002",
+  "case_date": "August 4-7, 2025",
+  "source_url": "https://aaboard.org/cases/Afterschool Mini AI Summer Camp K-2/AAB-CASE-2025-LL-002.html",
+  "summary": "Afterschool summer camp (5 days) using a generative AI storytelling application plus AI concept slides with learners ages ~5–7 in Diamond Bar, Southern California. The activity emphasized creative storytelling and early AI awareness, with post-assessment included.",
+  "case_type": "Case Report",
+  "status": "Completed",
+  "implementing_organization": {
+    "organization_type": "Afterschool center",
+    "location": "Diamond Bar, Southern California, USA (suburban)",
+    "primary_facilitator_role": "Undergrad. and graduate CS students; technical educators"
+  },
+  "learning_context": {
+    "setting_type": ["Informal learning", "Afterschool center", "In-school (K–12)", "Private program"],
+    "session_format": "Summer camp",
+    "duration": "5 days",
+    "group_size": "Around 6",
+    "devices": "Individual device",
+    "constraints": [
+      "No individual logins allowed",
+      "No personal data collection",
+      "Time-limited setup and teardown",
+      "Poor Wi‑Fi signal"
+    ]
+  },
+  "learner_profile": {
+    "age_range": "Approx. ages 5–7",
+    "prior_ai_exposure": "No prior experience with generative AI tools assumed",
+    "prior_programming_background": "No prior programming background assumed"
+  },
+  "educational_intent": {
+    "primary_learning_goals": [
+      "Narrative structure (beginning–middle–end)",
+      "Creative expression"
+    ],
+    "secondary_learning_goals": [
+      "Awareness of AI as a tool (not a human)",
+      "Prompt clarity and iteration",
+      "Reflection on human vs AI contributions"
+    ],
+    "what_this_was_not": [
+      "Not a programming lesson",
+      "Not an AI theory lesson"
+    ]
+  },
+  "ai_tool": {
+    "tool_type": "Generative AI storytelling application; AI concept slides",
+    "languages": ["English"],
+    "ai_role": ["Co-creator", "Tutor", "Evaluator", "Automation tool"],
+    "user_interaction_model": [
+      "Students pick their favorite stuffed animals",
+      "Educators take a picture of the animal",
+      "Students provide or pick short prompts using text or voice",
+      "AI generates story segments",
+      "Students provide or pick more prompts using text or voice"
+    ],
+    "safeguards": [
+      "No free-form open chat",
+      "Content moderation enabled"
+    ]
+  },
+  "activity_design": {
+    "activity_flow": [
+      "Educators introduce storytelling concepts",
+      "Group brainstorms story themes",
+      "Students input prompts",
+      "AI generates draft story text",
+      "Final story is read aloud"
+    ],
+    "human_vs_ai_responsibilities": [
+      "Human: theme selection, editing, discussion",
+      "AI: draft generation, storyline suggestions"
+    ],
+    "scaffolding_strategies": [
+      "Prompt cards with examples",
+      "Sentence starters",
+      "Educator-led reflection questions"
+    ]
+  },
+  "observed_challenges": [
+    "One student cannot read or speak English",
+    "Some prompts were vague or contradictory",
+    "Younger students needed help typing prompts",
+    "One student felt not learned, so he was later added to the age 8-10 group."
+  ],
+  "design_adaptations": [
+    "Added pause points for human editing"
+  ],
+  "reported_outcomes": {
+    "engagement": [
+      "High participation",
+      "Students volunteered ideas actively",
+      "Peer discussion increased after AI output"
+    ],
+    "learning_signals": [
+      "Students revised AI text intentionally",
+      "Students debated story coherence",
+      "Some students questioned AI \"choices\""
+    ],
+    "educators_reflection": "It was surprising and deeply encouraging to see that a student who does not yet read or speak English was still able to learn core AI concepts and perform very well on the assessment quiz. This experience reinforced how AI learning—when designed with visuals, interaction, and hands-on exploration—can be inclusive and accessible beyond language barriers."
+  },
+  "ethical_privacy": [
+    "No personal data collected",
+    "No student names recorded",
+    "No recordings or images stored"
+  ],
+  "evidence_type": [
+    "Practitioner observation",
+    "Activity documentation",
+    "Post assessment",
+    "Learning analytics",
+    "Student artifacts retained"
+  ],
+  "research_relevance": {
+    "potential_research_use": [
+      "Design-based research",
+      "Informal learning studies",
+      "AI-human collaboration framing",
+      "Early AI literacy conceptualization"
+    ],
+    "relevant_research_domains": [
+      "Learning sciences",
+      "Educational technology",
+      "AI literacy",
+      "Informal STEM education"
+    ]
+  },
+  "classification": {
+    "age": "Elementary",
+    "setting": "Afterschool center",
+    "ai_function": "Generative Text/Image/Voice",
+    "pedagogy": "Non-collaborative and collaborative Learning",
+    "risk_level": "Low",
+    "data_sensitivity": "None"
+  }
+}

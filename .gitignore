@@ -1,0 +1,9 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+*.egg-info/
+output/
+upload_temp/
+*.pdf
+!input/
