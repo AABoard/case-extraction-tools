@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AAB Case Registry Entry",
+  "description": "Structured case record for AAB AI Education Case Registry. Schema contains all fields required to generate the official AAB Case Registry PDF (e.g. AAB-CASE-2025-LL-002).",
+  "type": "object",
+  "properties": {
+    "case_id": { "type": "string", "pattern": "^AAB-CASE-\\d{4}-[A-Z]{2}-\\d{3}$", "description": "Registry ID (e.g. AAB-CASE-2025-LL-002); appears in header and footer" },
+    "case_date": { "type": "string", "description": "Case date or date range (e.g. August 4-7, 2025); appears in footer" },
+    "source_url": { "type": "string", "format": "uri", "description": "Optional URL of the case page (e.g. aaboard.org/cases/...); used in PDF footer" },
+    "summary": { "type": "string", "description": "Short narrative summary; appears in PDF header below case_id" },
+    "case_type": { "type": "string", "enum": ["Case Report", "Research Summary"], "description": "Appears in PDF header with Status" },
+    "status": { "type": "string", "enum": ["Completed", "Planned expansion", "Scaling across sites"], "description": "Case status; header and Section 13" },
+    "implementing_organization": {
+      "type": "object",
+      "description": "PDF Section 1: Implementing Organization",
+      "properties": {
+        "organization_type": { "type": "string" },
+        "location": { "type": "string" },
+        "primary_facilitator_role": { "type": "string" }
+      }
+    },
+    "learning_context": {
+      "type": "object",
+      "description": "PDF Section 2: Learning Context",
+      "properties": {
+        "setting_type": { "type": "array", "items": { "type": "string" } },
+        "session_format": { "type": "string" },
+        "duration": { "type": "string" },
+        "group_size": { "type": "string" },
+        "devices": { "type": "string" },
+        "constraints": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "learner_profile": {
+      "type": "object",
+      "description": "PDF Section 3: Learner Profile (Non-identifiable)",
+      "properties": {
+        "age_range": { "type": "string" },
+        "prior_ai_exposure": { "type": "string" },
+        "prior_programming_background": { "type": "string" }
+      }
+    },
+    "educational_intent": {
+      "type": "object",
+      "description": "PDF Section 4: Educational Intent",
+      "properties": {
+        "primary_learning_goals": { "type": "array", "items": { "type": "string" } },
+        "secondary_learning_goals": { "type": "array", "items": { "type": "string" } },
+        "what_this_was_not": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "ai_tool": {
+      "type": "object",
+      "description": "PDF Section 5: AI Tool Description",
+      "properties": {
+        "tool_type": { "type": "string" },
+        "languages": { "type": "array", "items": { "type": "string" }, "description": "Languages used (e.g. English)" },
+        "ai_role": { "type": "array", "items": { "type": "string" } },
+        "user_interaction_model": { "type": "array", "items": { "type": "string" } },
+        "safeguards": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "activity_design": {
+      "type": "object",
+      "description": "PDF Section 6: Activity Design",
+      "properties": {
+        "activity_flow": { "type": "array", "items": { "type": "string" } },
+        "human_vs_ai_responsibilities": { "type": "array", "items": { "type": "string" } },
+        "scaffolding_strategies": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "observed_challenges": { "type": "array", "items": { "type": "string" }, "description": "PDF Section 7: Observed Challenges (Educators-Reported)" },
+    "design_adaptations": { "type": "array", "items": { "type": "string" }, "description": "PDF Section 8: Design Adaptations Made" },
+    "reported_outcomes": {
+      "type": "object",
+      "description": "PDF Section 9: Reported Outcomes (Descriptive, Not Measured)",
+      "properties": {
+        "engagement": { "type": "array", "items": { "type": "string" }, "description": "Engagement bullets (e.g. High participation; Students volunteered...)" },
+        "learning_signals": { "type": "array", "items": { "type": "string" }, "description": "Learning Signals (Qualitative)" },
+        "educators_reflection": { "type": "string", "description": "Educators Reflection quote" }
+      }
+    },
+    "ethical_privacy": { "type": "array", "items": { "type": "string" }, "description": "PDF Section 10: Ethical & Privacy Considerations" },
+    "evidence_type": { "type": "array", "items": { "type": "string" }, "description": "PDF Section 11: Evidence Type" },
+    "research_relevance": {
+      "type": "object",
+      "description": "PDF Section 12: Relevance to AI Education Research",
+      "properties": {
+        "potential_research_use": { "type": "array", "items": { "type": "string" } },
+        "relevant_research_domains": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "description": "PDF Section 14: AAB Classification Tags (also used in header: Age, Setting, AI Function, Pedagogy, Risk Level, Data Sensitivity)",
+      "properties": {
+        "age": { "type": "string" },
+        "setting": { "type": "string" },
+        "ai_function": { "type": "string" },
+        "pedagogy": { "type": "string" },
+        "risk_level": { "type": "string" },
+        "data_sensitivity": { "type": "string" },
+        "education_level": { "type": "string" },
+        "subject_area": { "type": "string" },
+        "use_case_type": { "type": "string" }
+      }
+    }
+  },
+  "required": ["summary"],
+  "additionalProperties": true
+}

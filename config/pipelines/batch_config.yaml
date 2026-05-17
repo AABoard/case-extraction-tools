@@ -1,0 +1,25 @@
+# Batch pipeline configuration (Phase 3)
+# All values are overridable via env or CLI - no hardcoding
+
+version: "1.0"
+
+# Supported document extensions for ingestion
+supported_extensions:
+  - .pdf
+  - .docx
+  - .doc
+  - .txt
+  - .md
+  - .html
+
+# Output file naming: {stem} = input base name
+output_patterns:
+  json: "{stem}_case.json"
+  pdf: "{stem}_case.pdf"
+  html: "{stem}_case.html"
+
+# CSV ingestion: column mapping when reading a manifest CSV
+# Columns: path, doc_type (optional)
+csv_columns:
+  path: "path"
+  doc_type: "doc_type"

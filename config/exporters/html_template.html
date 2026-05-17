@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ case.case_id | default('Case') }} — AAB Case Registry</title>
+  <style>
+    :root { --primary: #1a365d; --muted: #4a5568; --border: #e2e8f0; }
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; color: #1a202c; }
+    h1, h2 { color: var(--primary); }
+    h2 { font-size: 1.1rem; margin-top: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .section { margin-bottom: 1rem; }
+    .label { font-weight: 600; color: var(--primary); margin-bottom: 0.25rem; }
+    .value { margin-left: 0; }
+    ul { margin: 0.25rem 0 0 1rem; padding: 0; }
+    .footer { margin-top: 2rem; font-size: 0.85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="meta">{{ case.case_type | default('') }} &bull; {{ case.status | default('') }}</div>
+    <h1>{{ case.case_id | default('') }}</h1>
+    <p>{{ case.summary | default('') }}</p>
+  </header>
+
+  <main>
+    {% if case.implementing_organization %}
+    <section class="section">
+      <h2>1. Implementing Organization</h2>
+      {% set io = case.implementing_organization %}
+      <div class="label">Organization Type</div><div class="value">{{ io.organization_type | default('') }}</div>
+      <div class="label">Location</div><div class="value">{{ io.location | default('') }}</div>
+      <div class="label">Primary Facilitator Role</div><div class="value">{{ io.primary_facilitator_role | default('') }}</div>
+    </section>
+    {% endif %}
+
+    {% if case.learning_context %}
+    <section class="section">
+      <h2>2. Learning Context</h2>
+      {% set lc = case.learning_context %}
+      <div class="label">Setting Type</div><div class="value">{{ lc.setting_type | join(', ') if lc.setting_type else '' }}</div>
+      <div class="label">Session Format</div><div class="value">{{ lc.session_format | default('') }}</div>
+      <div class="label">Duration</div><div class="value">{{ lc.duration | default('') }}</div>
+      <div class="label">Group Size</div><div class="value">{{ lc.group_size | default('') }}</div>
+      <div class="label">Devices</div><div class="value">{{ lc.devices | default('') }}</div>
+      {% if lc.constraints %}
+      <div class="label">Constraints</div><ul>{% for c in lc.constraints %}<li>{{ c }}</li>{% endfor %}</ul>
+      {% endif %}
+    </section>
+    {% endif %}
+
+    {% if case.learner_profile %}
+    <section class="section">
+      <h2>3. Learner Profile</h2>
+      {% set lp = case.learner_profile %}
+      <div class="label">Age Range</div><div class="value">{{ lp.age_range | default('') }}</div>
+      <div class="label">Prior AI Exposure</div><div class="value">{{ lp.prior_ai_exposure | default('') }}</div>
+      <div class="label">Prior Programming Background</div><div class="value">{{ lp.prior_programming_background | default('') }}</div>
+    </section>
+    {% endif %}
+
+    {% if case.educational_intent %}
+    <section class="section">
+      <h2>4. Educational Intent</h2>
+      {% set ei = case.educational_intent %}
+      {% if ei.primary_learning_goals %}<div class="label">Primary Goals</div><ul>{% for g in ei.primary_learning_goals %}<li>{{ g }}</li>{% endfor %}</ul>{% endif %}
+      {% if ei.secondary_learning_goals %}<div class="label">Secondary Goals</div><ul>{% for g in ei.secondary_learning_goals %}<li>{{ g }}</li>{% endfor %}</ul>{% endif %}
+      {% if ei.what_this_was_not %}<div class="label">What This Was Not</div><ul>{% for w in ei.what_this_was_not %}<li>{{ w }}</li>{% endfor %}</ul>{% endif %}
+    </section>
+    {% endif %}
+
+    {% if case.classification %}
+    <section class="section">
+      <h2>AAB Classification Tags</h2>
+      {% set cl = case.classification %}
+      <div class="value">Age: {{ cl.age | default('') }} &bull; Setting: {{ cl.setting | default('') }} &bull; AI Function: {{ cl.ai_function | default('') }} &bull; Pedagogy: {{ cl.pedagogy | default('') }} &bull; Risk: {{ cl.risk_level | default('') }} &bull; Data: {{ cl.data_sensitivity | default('') }}</div>
+    </section>
+    {% endif %}
+  </main>
+
+  <footer class="footer">
+    Registry: Case &bull; ID: {{ case.case_id | default('') }} &bull; Case Date: {{ case.case_date | default('') }} &bull; AAB Case Registry
+  </footer>
+</body>
+</html>

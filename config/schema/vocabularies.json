@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "filters": {
+    "education_level": ["K-5", "6-8", "9-12", "Higher Ed", "Adult/Workforce"],
+    "subject_area": ["STEM", "Humanities", "Arts", "Career/Technical", "Cross-curricular"],
+    "use_case_type": ["Instructional support", "Assessment", "Feedback", "Content creation", "Administrative workflow"],
+    "pilot_stage": ["Design", "Limited pilot", "Expanded pilot", "Operational"],
+    "stakeholder_group": ["Teachers", "Students", "Administrators", "Counselors", "IT"],
+    "ai_capability_type": ["LLM/Chat", "Tutoring/Adaptive", "Analytics", "Multimodal", "Automation"],
+    "implementation_model": ["Classroom-level", "Department-level", "School-wide", "District/System-wide"],
+    "governance_safety_focus": ["Privacy/Data handling", "Bias/Fairness", "Academic integrity", "Accessibility"],
+    "evidence_type": ["Anecdotal", "Survey", "Usage metrics", "Learning outcomes", "Mixed methods"],
+    "evidence_type_extended": ["Practitioner observation", "Activity documentation", "Pre/post assessment", "Post assessment", "Learning analytics", "Student artifacts retained"],
+    "outcomes_domain": ["Learning impact", "Teacher workload", "Engagement", "Equity/Access", "Cost/Efficiency"],
+    "constraints_risks": ["Policy limits", "Technical limits", "Adoption barriers", "Unintended effects"],
+    "replicability_assets": ["Playbook available", "Templates", "Rubric", "Training materials", "None"]
+  },
+  "classification_tags": {
+    "age": ["Elementary", "Middle School", "High School", "Higher Ed", "Adult/Workforce", "Multi-age"],
+    "setting": ["Public Library", "In-school (K-12)", "Afterschool center", "Informal learning", "Private program", "University"],
+    "ai_function": ["Generative Text/Image/Voice", "LLM/Chat", "Tutoring/Adaptive", "Analytics", "Multimodal", "Automation"],
+    "pedagogy": ["Non-collaborative Learning", "Collaborative", "Non-collaborative and collaborative Learning", "Project-based", "Flipped", "Blended"],
+    "risk_level": ["Low", "Medium", "High"],
+    "data_sensitivity": ["None", "Low", "Medium", "High"]
+  }
+}
